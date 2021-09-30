@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Welcome - PVT Web Application</title>
+    <link rel="stylesheet" href="css-reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="welcomingMessage">
+        <div class="formDescription">
+            <h1>Instruksi</h1>
+            <h2>1. Nama Responden</h2>
+            <p class="paragraphSpacing">Form bagian Nama Responden diisi dengan nama lengkap responden yang akan melakukan uji PVT. </p>
+            
+            <h2>2. Jenis Pengujian</h2>
+            <p>Form bagian Jenis Pengujian diisi dengan jenis pengujian PVT berdasarkan shift kerja dari pekerja yang terdiri dari :
+                <ul>
+                    <li>Awal Shift</li>
+                    <li>Tengah Shift</li>
+                    <li>Akhir Shift</li>
+                </ul>
+            </p>
+            <h2 class="lineSpacing">3. Shift Kerja</h2>
+            <p>Form bagian Shift Kerja diisi dengan jenis shift dari pekerja yang ditugaskan untuk melakukan pekerjaan yang terdiri dari:
+                <ul>
+                    <li>Pagi</li>
+                    <li>Malam</li>
+                </ul>
+            </p>
+        </div>
+        <div class="objectForm">
+            <div id="databaseButton">
+                <a id="linkDatabase" href="database-pvt.html">Basis Data</a>
+                <img id="linkDatabaseArrow" src="img/right-arrow.svg" alt="">
+            </div>
+            <div id="baselineButton">
+                <a id="linkBaseline" href="pvt-baseline.html">Baseline PVT</a>
+                <img id="linkBaselineArrow" src="img/right-arrow.svg" alt="">
+            </div>
+            <img src="img/logo-lrske-itb.png" alt="" style="max-width: 100px;">
+            <h1>PVT Test</h1><br>
+            <form onsubmit="return getinfo()" action="pvt-trial.html">
+                <label for="username">Nama Responden :</label>
+                <input id="username" type="text" placeholder="Nama Lengkap" autocomplete="off"><br><br>
+
+                <label for="jenisPengujian">Jenis Pengujian :</label>
+                <select id="jenisPengujian" name="Jenis Pengujian">
+                    <option value="Awal">Awal Shift</option>
+                    <option value="Tengah">Tengah Shift</option>
+                    <option value="Akhir">Akhir Shift</option>
+                </select><br><br>
+
+                <label for="jenisShift">Shift Kerja :</label>
+                <select id="jenisShift" name="Jenis Shift">
+                    <option value="Pagi">Pagi</option>
+                    <option value="Malam">Malam</option>
+                </select><br><br>
+                <button class="lanjutkanButton" type="submit">LANJUTKAN</button>
+            </form>
+            <div class="settingsTrial">
+                <button id="settingsButton"></button>
+                <img id="gear" src="img/gear.svg" alt="">
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>PVT Web Application</title>
+    <link rel="stylesheet" href="css-reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1>PVT Web Application</h1>
+            <p>Psychomotor Vigilance Task (PVT) digunakan untuk mengevaluasi tingkat kecukupan tidur seseorang dengan mendeteksi jeda waktu dalam memberikan respon yang dikenal dengan "microsleep" yang biasa berkaitan dengan kelelahan atau fatigue.</p><br>
+
+            <p>Uji PVT merupakan uji yang dilakukan untuk menilai kecepatan seseorang dalam memberikan respon terhadap suatu stimulus atau yang biasa dikenal dengan "human reaction time test". Uji ini akan berlangsung selama 5-10 menit. Untuk melakukan uji PVT ini, Anda dianjurkan untuk menggunakan mouse sebagai perangkat input untuk memberikan respon terhadap stimulus yang ada.</p>
+        </div>
+
+        <button id="takeTestButton">Lanjutkan</button>
+
+    </div>
+<script>
+    let takeTestButton = document.getElementById("takeTestButton");
+
+    takeTestButton.addEventListener("click", function () {
+
+        const passwordPVT = prompt("Anda diminta untuk memberikan kata sandi agar dapat menggunakan aplikasi PVT ini!\n\nPassword:")
+        if (passwordPVT == null || passwordPVT == "") {
+            console.log("Access denied! Please provide correct user credentials!")
+        } else if (passwordPVT == "lrskeitb1920") {
+            window.location.href = "welcome-pvt.html";
+        }
+    })
+</script>
+</body>
+</html>

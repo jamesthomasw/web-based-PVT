@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengaturan PVT - PVT Web Application</title>
+    <link rel="stylesheet" href="css-reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div id="settingsText">
+            <div class="settingsOption">
+                <h1>Pengaturan PVT</h1><br><br>
+                <h2>Setiap pengaturan baru akan tersimpan secara otomatis.</h2>
+                <label id="lowThresholdLabel" for="lowThresholdValue">Batas bawah toleransi :</label>
+                <input id="lowThresholdValue" type="number" value="0.05" step="0.01"><br><br>
+                <label id="highThresholdLabel" for="highThresholdValue">Batas atas toleransi :</label>
+                <input id="highThresholdValue" type="number" value="0.1" step="0.01"><br><br>
+                <label id="lowLapseLabel" for="lowLapseThreshold">Batas bawah toleransi miss :</label>
+                <input id="lowLapseThreshold" type="number" value="5" step="1"><br><br>
+                <label id="highLapseLabel" for="highLapseThreshold">Batas atas toleransi miss :</label>
+                <input id="highLapseThreshold" type="number" value="12" step="1"><br><br>
+            </div>
+            <button id="backButton" onclick="window.location.href='welcome-pvt.html'">Kembali</button>
+        </div>
+        <!-- PLEASE DO NOT CHANGE ANY OF THIS LICENSE BELOW WITHOUT PERMISSION  -->
+        <div id="license">
+            <p>Copyright</p>
+            <img src="img/license.png" alt="">
+            <p>2020 LRSKE ITB</p><br>
+            <p>Developed by James</p>
+        </div>
+    </div>
+</body>
+<script>
+    // Mendefinisikan input box untuk setiap variabel
+    let lowThreshold = document.getElementById("lowThresholdValue");
+    let highThreshold = document.getElementById("highThresholdValue");
+    let lowLapseThreshold = document.getElementById("lowLapseThreshold");
+    let highLapseThreshold = document.getElementById("highLapseThreshold");
+
+    //Mendefinisikan nilai awal variabel
+    let lowThresholdValue = undefined;
+    let highThresholdValue = undefined;
+    let lowLapseThresholdValue = undefined;
+    let highLapseThresholdValue = undefined;
+
+    // Fungsi untuk mengubah nilai batas atas dan bawah ketika ada pergantian nilai oleh user
+    lowThreshold.addEventListener("change", function () {
+        lowThresholdValue = this.value;
+        localStorage.setItem("lowThresholdValue", lowThresholdValue);
+    })
+
+    highThreshold.addEventListener("change", function () {
+        highThresholdValue = this.value;
+        localStorage.setItem("highThresholdValue", highThresholdValue);
+    })
+
+    lowLapseThreshold.addEventListener("change", function () {
+        lowLapseThresholdValue = this.value;
+        localStorage.setItem("lowLapseThresholdValue", lowLapseThresholdValue);
+    })
+
+    highLapseThreshold.addEventListener("change", function () {
+        highLapseThresholdValue = this.value;
+        localStorage.setItem("highLapseThresholdValue", highLapseThresholdValue);
+    })
+    
+    // Menyesuaikan nilai batas atas dan batas bawah dan menampilkan nilai pada halaman pengaturan
+    lowThreshold.setAttribute('value', localStorage.getItem("lowThresholdValue"));
+    highThreshold.setAttribute('value', localStorage.getItem("highThresholdValue"));
+    lowLapseThreshold.setAttribute('value', localStorage.getItem("lowLapseThresholdValue"));
+    highLapseThreshold.setAttribute('value', localStorage.getItem("highLapseThresholdValue"));
+</script>
+</html>

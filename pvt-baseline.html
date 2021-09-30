@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="css-reset.css">
+    <link rel="stylesheet" href="style.css">
+    <title>PVT Baseline - PVT Web Application</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-black">
+        <!-- Halaman awal pengukuran baseline PVT -->
+        <div id="pvtBaseline" class="optionTestLength">
+            <h1>Pengujian PVT Baseline</h1><br>
+
+            <h2>Pengujian PVT Baseline merupakan pengujian PVT yang dilakukan pada pekerja yang sedang dalam kondisi fit dan cukup tidur. Data baseline ini kemudian akan digunakan sebagai acuan dalam menentukan apakah pekerja mengalami kelelahan atau tidak. </h2>
+
+            <h2>Sebelum memulai pengujian PVT Baseline, harap mengisi nama responden, shift kerja, tingkat kantuk Anda saat ini dan lama waktu pengukuran yang diinginkan.</h2><br>
+            <label id="idLabel" for="username">Nama Responden :</label>
+            <input id="username" type="text" placeholder="Nama Lengkap" autocomplete="off"><br><br>
+
+            <label id="shiftLabelBaseline" for="shiftBaseline">Shift Kerja :</label>
+            <select id="shiftBaseline" name="shiftBaseline">
+                <option value="Pagi">Pagi</option>
+                <option value="Malam">Malam</option>
+            </select><br><br>
+
+            <label id="kssLabelBaseline" for="kssBaseline">Tingkat kantuk saat ini :</label>
+            <select id="kssBaseline" name="kssBaseline">
+                <option value="1" selected>1 - Sangat terjaga sekali</option>
+                <option value="2">2 - Sangat terjaga</option>
+                <option value="3">3 - Terjaga</option>
+                <option value="4">4 - Agak terjaga</option>
+                <option value="5">5 - Tidak terjaga dan tidak ngantuk</option>
+                <option value="6">6 - Terdapat tanda-tanda mengantuk</option>
+                <option value="7">7 - Mengantuk, tapi mudah untuk bangun</option>
+                <option value="8">8 - Mengantuk, butuh upaya untuk bangun</option>
+                <option value="9">9 - Sangat mengantuk, melawan rasa kantuk berat</option>
+                <option value="10">10 - Sangat mengantuk sekali, tidak dapat bangun</option>
+            </select><br><br>
+
+            <label id="waktuLabel" for="waktuBaseline">Lama Waktu :</label>
+            <select id="waktuBaseline" name="waktuBaseline">
+                <option value="180000">Latihan (3 menit)</option>
+                <option value="300000" selected>5 menit</option>
+                <option value="600000">10 menit</option>
+            </select><br><br><br>
+        </div>
+        <button id="instructionButtonBaseline">MULAI</button>
+
+        <!-- Halaman instruksi -->
+        <div id="instructionBaseline" class="centered">
+            <h1>Perhatian!</h1>
+            <h2>Anda akan melihat layar dengan latar belakang berwarna hitam untuk beberapa menit kedepan. Selama uji berlangsung, Anda akan diberikan suatu stimulus dengan bentuk kotak papan catur berwarna hitam dan putih seperti berikut:</h2>
+            <div id="testScreenBaseline">
+                <img src="img/bnw-checkered.png" alt="">
+            </div>
+            <h3>Layar Anda</h3>
+            <h4> Tugas Anda hanyalah memberikan respon <span class="underline">secepat mungkin</span>  setelah Anda melihat kotak papan catur dengan menekan mouse Anda pada bagian layar manapun. Apabila Anda telah siap untuk memulai uji, maka tekan tombol 'MULAI' di bawah ini.</h4>
+        </div>
+        <button id="siapButtonBaseline">MULAI</button>
+
+        <!-- Halaman siap -->
+        <div id="siapBaseline">
+            <h1>Siap?</h1>
+            <h2>Harap mempersiapkan diri terlebih dahulu sebelum memulai uji. Uji akan segera dimulai setelah Anda menekan tombol 'SIAP' berikut.</h2>
+        </div>
+        <button id="testButtonBaseline">SIAP</button>
+
+        <!-- Halaman program PVT -->
+        <div id="screen">
+        
+            <div id="test">
+                0 
+            </div>
+
+            <div id="display"></div>
+        
+            <div id="timer">
+                0
+            </div>
+        
+        </div>
+
+        <!-- Halaman terima kasih -->
+        <div id="thankYouBaseline">
+            <h1>Terima Kasih</h1>
+            <h2>Anda telah menyelesaikan pengujian PVT Baseline.</h2>
+            <div id="viewResultBaseline">
+                <button id="resultButton">Lihat Hasil</button>
+                <img src="img/arrow-right.svg" alt="">
+            </div>
+        </div>
+
+        <!-- Halaman hasil pengukuran baseline -->
+        <div id="resultBaseline">
+            <h1>Hasil Pengujian PVT Baseline</h1>
+            <div id="detailBaseline">
+                <h2>Tanggal Pengujian :</h2><br>
+                <p id="dateTime">0</p><br>
+                <h2>Nama Responden:</h2>
+                <p id="usernameResult">0</p><br>
+                <h2>Jenis Pengujian :</h2>
+                <p id="tipePengujianResult">0</p><br>
+                <h2>Shift Kerja :</h2>
+                <p id="tipeShiftResult">0</p>
+            </div>
+            <div id="outcomeMetricBaseline">
+                <h3>Rata-rata :</h3>
+                <p id="meanValue">
+                    0
+                </p><br>
+                <h3>Respon paling cepat :</h3>
+                <p id="fastestValue">
+                    0
+                </p><br>
+                <h3>Respon paling lambat :</h3>
+                <p id="slowestValue">
+                    0
+                </p><br>
+                <h3>Banyaknya miss :</h3>
+                <p id="numOfLapse">
+                    0
+                </p><br>
+            </div>
+            <button id="mainMenuButtonBaseline" onclick="window.location.href='welcome-pvt.html'">Kembali</button>
+        </div>
+        <!-- PLEASE DO NOT CHANGE ANY OF THIS LICENSE CODE BELOW WITHOUT PERMISSION  -->
+        <div id="license">
+            <p>Copyright</p>
+            <img src="img/license.png" alt="">
+            <p>2020 LRSKE ITB</p><br>
+            <p>Developed by James</p>
+        </div>
+        
+        </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyCKoQ9fY9jTYdbin9kPObSRn4B3i8zrpCw",
+        authDomain: "pvt-webapp-03.firebaseapp.com",
+        databaseURL: "https://pvt-webapp-03-default-rtdb.firebaseio.com",
+        projectId: "pvt-webapp-03",
+        storageBucket: "pvt-webapp-03.appspot.com",
+        messagingSenderId: "195500010897",
+        appId: "1:195500010897:web:f69830ffeed73c00db7e30",
+        measurementId: "G-1V0WJ8Q185"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    </script>
+    <script src="script-baseline.js"></script>
+</body>
+</html>
